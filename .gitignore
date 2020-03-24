@@ -1,0 +1,12 @@
+#node dependencies
+/node_modules
+/.vuepress
+
+#production files
+/dist
+
+#editor files
+.vscode/
+package-lock.json
+
+yarn.lock
