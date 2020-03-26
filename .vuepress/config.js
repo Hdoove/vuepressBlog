@@ -6,11 +6,16 @@ const filehelper = require('../utils/initPages');
 module.exports = {
   title: '前端成长之路',
   description: '记录每日生活',
-//   base: '/Hdoove',
+  //   base: '/Hdoove',
   themeConfig: {
-    nav: [
-      { text: 'Github', link: 'https://github.com/Hdoove' },
-      { text: '仿网易云音乐', link: 'http://music.hdove.top' },
+    nav: [{
+        text: 'Github',
+        link: 'https://github.com/Hdoove'
+      },
+      {
+        text: '仿网易云音乐',
+        link: 'http://music.hdove.top'
+      },
     ],
     sidebar: [
       utils.genSidebar('HTML', filehelper.getFileName("./html"), true),
@@ -27,6 +32,7 @@ module.exports = {
       utils.genSidebar('链表', filehelper.getFileName("./list"), true),
       utils.genSidebar('面试', filehelper.getFileName("./interview"), true),
       utils.genSidebar('其他', filehelper.getFileName("./other"), true),
+      utils.genSidebar('问题汇总', filehelper.getFileName("./problem"), true),
     ]
   }
 }
