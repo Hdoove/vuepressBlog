@@ -27,6 +27,7 @@ module.exports = {
       utils.genSidebar('链表', filehelper.getFileName("./list"), true),
       utils.genSidebar('面试', filehelper.getFileName("./interview"), true),
       utils.genSidebar('其他', filehelper.getFileName("./other"), true),
+      utils.genSidebar('问题汇总', filehelper.getFileName("./problem"), true),
     ]
   }
 }
