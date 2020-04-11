@@ -25,3 +25,25 @@ module: {
 }
 
 ```
+
+
+### 转化 px rem
+
+```javacript
+
+{
+    loader: 'px2rem-loader',
+    options: {
+        remUnit: 75,
+        remPrecision: 8
+    }
+}
+
+<script>
+    // 静态资源内联  获取屏幕宽度
+
+    // !!!! 这里注意 raw-loader 用v0.5.1版本,不然会报 [object module] 的问题
+    ${ require('raw-loader!babel-loader!../node_modules/lib-flexible/flexible.js') }
+</script>
+
+```
