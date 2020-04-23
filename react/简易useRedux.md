@@ -8,7 +8,6 @@ const StoreContext = createContext();
 
 export const StoreProvider = (props) => {
 
-
     const initialState = {
         name: 'hdove',
         age: 0
