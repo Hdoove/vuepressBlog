@@ -1,3 +1,9 @@
+
+
+### setTimeout实现setInterval
+
+```javascript
+
 function mySetInterval(fn, delay) {
 
     const temp = () => {
@@ -12,3 +18,5 @@ function mySetInterval(fn, delay) {
 mySetInterval(() => {
     console.log(111);
 }, 1000);
+
+```
