@@ -1,4 +1,4 @@
-### Primise按顺序执行
+### Primise顺序执行
 
 ```javascript
 
