@@ -11,6 +11,7 @@ const s2 = Symbol();
 
 const obj = {
     [s1]: 'hd',
+    [s1]: 'lj',
     name: 'hdove',
     age: 25
 }
