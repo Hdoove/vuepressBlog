@@ -16,7 +16,6 @@ class PromisePool {
         let url = this.urls.shift();
         this.setTask(url);
       }
-      console.log(111);
       // 利用Promise.race 方法来获得并发池中某任务完成的信号
       let race = Promise.race(this.pool);
       return this.run(race);
