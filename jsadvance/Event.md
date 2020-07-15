@@ -61,6 +61,15 @@ class EventListener {
             }
         }
     }
+
+    once(type, fn) {
+        let newFn = function() {
+            fn.apply(this, [...arguments]);
+            this.remove(type, newFn);
+        }
+
+        this.on(type, newFn);
+    }
 }
 
 let map = new EventListener();
