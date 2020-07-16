@@ -25,6 +25,8 @@ function bigAdd(num1, num2) {
         res.unshift(temp);
     }
 
+    if(go !== 0) res.unshift(go);
+
     return res.join('');
 
 }
