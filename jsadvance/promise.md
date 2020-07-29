@@ -128,17 +128,24 @@ function resolvePromise(promise, x, resolve, reject) {
 }
 
 Promise.all = function (promises) {
-    let arr = [];
+    let result = [];
     let index = 0;
 
     return new Promise((resolve, reject) => {
         for (let i = 0, len = promises.length; i < len; i++) {
             promises[i].then(data => {
-                arr[i] = data;
+                result[i] = data;
                 index += 1;
 
                 if (index === promises.length) {
-                    resolve(arr);
+                    resolve(result);
+                }
+            }, err => {
+                result[i] = null;
+                index += 1;
+
+                if (index === promises.length) {
+                    resolve(result);
                 }
             });
         }
