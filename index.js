@@ -1,18 +1,18 @@
 
-const arr = [1,2,3,4,5,6,7];
+var integerBreak = function (n) {
+    let dep = [];
+    dep[2] = 1;
+    dep[3] = 2;
+    dep[4] = 4;
+    dep[5] = 6;
+    dep[6] = 9;
+    dep[7] = 12;
 
-function twoSum(arr, target) {
-    let map=new Map();
-
-    for(let i=0; i<arr.length; i++) {
-        if( map.get(target - arr[i])) {
-            return [i,map.get(target - arr[i]) ]
-        }else {
-            map.set(arr[i], i);
-        }
+    for (let i = 7; i <= n; i++) {
+        dep[i] = dep[i - 3] * 3;
     }
 
-    return -1;
-}
+    return dep[n];
+};
 
-console.log( twoSum(arr, 8) );
+console.log(integerBreak(10));
