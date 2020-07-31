@@ -29,7 +29,7 @@ module: {
 
 ### 转化 px rem
 
-```javacript
+```javascript
 
 {
     loader: 'px2rem-loader',
