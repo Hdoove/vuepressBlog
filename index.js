@@ -1,13 +1,23 @@
-/**
- * @param {number[]} target
- * @param {number[]} arr
- * @return {boolean}
- */
-var canBeEqual = function(target, arr) {
-    target = target.sort((a,b) => a -b).toString();
-    arr = arr.sort((a,b) => a -b).toString();
-
-    return target === arr;
-};
-
-console.log(canBeEqual([3,7,9], [3,7,11]));
+const pro = new Promise((resolve, reject) => {
+    
+    const innerpro = new Promise((resolve, reject) => {
+        
+      setTimeout(() => { 
+        resolve(1); 
+      }, 0); 
+      
+      console.log(2); 
+      resolve(3); 
+      
+    }); 
+  
+    innerpro.then(res => console.log(res));
+  
+    resolve(4); 
+  
+    console.log("pro"); 
+  });
+  
+  pro.then(res => console.log(res)); 
+  
+  console.log("end");
