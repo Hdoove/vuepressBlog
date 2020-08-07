@@ -1,28 +1,27 @@
+var arr = [1,[2,[3]]];
 
-class Parent {
-    constructor(name) {
-        this.name = name;
-        this.age = 25;
-    }
-
-    getName() {
-        console.log(this.name)
-        return this.name;
-    }
-
-    setName(str) {
-        this.name = str;
-    }
+function flat(arr) {
+    return arr.reduce((a,b) => {
+        Array.isArray(b) ? a.push(...flat(b)) : a.push(b);
+        return a;
+    }, []);
 }
 
-class Child extends Parent {
-    constructor(name) {
-        super(name);
-    }
+console.log(flat(arr))
+
+Promise.all = function(promises) {
+    return new Promise((resolve,rej) => {
+        let result = [];
+        let index = 0;
+
+        for(let i=0; i<promises.length; i++) {
+            promises[i].then(res => {
+                result[i] = res;
+                index += 1;
+                if(index === promises.length) {
+                    resolve(result);
+                }
+            })
+        }
+    })
 }
-
-const child = new Child('lj');
-
-child.getName();
-child.setName('hd');
-child.getName()
