@@ -1,14 +1,12 @@
-
-let str = '1234';
-
-str = str.split('');
-
-let len = str.length;
-
-for(let i=0; i<Math.floor(len/2); i++) {
- let temp = str[i];
- str[i] = str[len - i];
- str[len - 1] = temp;
+function Parent() {
+    this.name = 'lj';
+    this.age = 25;
 }
 
-console.log(str)
+function Child() {
+    Parent.call(this);
+    this.address = '天津';
+}
+
+const p = Parent.prototype;
+Child.constructor = p;
